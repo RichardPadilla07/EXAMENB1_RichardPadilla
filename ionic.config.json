@@ -1,0 +1,7 @@
+{
+  "name": "Recibos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
