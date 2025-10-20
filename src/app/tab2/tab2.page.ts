@@ -25,8 +25,6 @@ export class Tab2Page {
 
   async addPhotoToGallery() {
     const photo = await this.photoService.addNewToGallery();
-    // Si quieres guardar la foto como recibo automáticamente:
-    // this.receiptPhoto = photo.webviewPath;
     setTimeout(() => {
       this.scrollToBottom();
     }, 300);
@@ -39,7 +37,7 @@ export class Tab2Page {
   }
 
   guardarGasto() {
-    // Usar la última foto tomada como recibo
+  
     const receiptPhoto = this.photoService.photos[0]?.webviewPath || null;
     if (!this.descripcion || !this.monto || !this.usuario || !receiptPhoto) {
       alert('Completa todos los campos y toma la foto del recibo');

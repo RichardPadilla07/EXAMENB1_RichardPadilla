@@ -77,7 +77,6 @@ export class PhotoService {
     };
   }
 
-  // Esto convierte la foto a base64
   private async readAsBase64(photo: CameraPhoto) {
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
@@ -85,7 +84,6 @@ export class PhotoService {
     return await this.convertBlobToBase64(blob) as string;
   }
 
-  //ahora convertir un Blob a base64
   private convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onerror = reject;
