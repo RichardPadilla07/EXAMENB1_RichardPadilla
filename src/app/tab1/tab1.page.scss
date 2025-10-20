@@ -1,0 +1,85 @@
+.container {
+  padding: 16px;
+}
+
+.total-card {
+  background: linear-gradient(90deg, green 60%);
+  color: white;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.total-label {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.total-amount {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.total-date {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.recent-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.gasto-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gasto-desc {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.gasto-user {
+  font-size: 13px;
+  color: #666;
+}
+
+.gasto-participantes {
+  margin-top: 6px;
+}
+
+.participante {
+  background: #e0e7ef;
+  border-radius: 50%;
+  padding: 4px 8px;
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+.gasto-right {
+  text-align: right;
+}
+
+.gasto-monto {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.gasto-fecha {
+  font-size: 12px;
+  color: #666;
+}
+
+.gasto-verificado {
+  color: green;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.gasto-img {
+  width: 40px;
+  margin-top: 6px;
+  border-radius: 6px;
+}

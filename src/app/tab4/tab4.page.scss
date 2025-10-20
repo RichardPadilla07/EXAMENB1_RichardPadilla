@@ -1,0 +1,134 @@
+.reporte-header {
+  --background: linear-gradient(90deg, #6a7cff 0%, #6a4cff 100%);
+  color: #fff;
+  min-height: 70px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 18px;
+  .reporte-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #fff;
+  }
+  .reporte-sub {
+    font-size: 15px;
+    color: #e0e0e0;
+    margin-bottom: 6px;
+  }
+}
+
+.reporte-box {
+  background: #fff;
+  border-radius: 18px;
+  margin: 18px 10px 0 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 18px 12px 18px 12px;
+}
+
+.reporte-totales {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.reporte-total, .reporte-promedio {
+  background: #f7f7fa;
+  border-radius: 12px;
+  padding: 12px 18px;
+  min-width: 120px;
+  text-align: center;
+}
+.reporte-total-label {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 2px;
+}
+.reporte-total-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+}
+
+.reporte-categorias {
+  background: #f7f7fa;
+  border-radius: 12px;
+  padding: 14px 12px 10px 12px;
+  margin-bottom: 18px;
+}
+.reporte-cat-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+.reporte-cat-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  span {
+    min-width: 90px;
+    font-size: 14px;
+    color: #444;
+  }
+  .reporte-bar {
+    flex: 1;
+    height: 8px;
+    border-radius: 6px;
+    margin: 0 10px;
+    background: #e0e0e0;
+  }
+  .azul {
+    background: #1976d2;
+    width: 70%;
+  }
+  .morado {
+    background: #a259e6;
+    width: 40%;
+  }
+  .naranja {
+    background: #ff9800;
+    width: 20%;
+  }
+  .reporte-cat-monto {
+    font-weight: 700;
+    color: #222;
+    min-width: 48px;
+    text-align: right;
+  }
+}
+
+.reporte-periodo {
+  background: #f7f7fa;
+  border-radius: 12px;
+  padding: 12px 12px 10px 12px;
+  margin-bottom: 8px;
+}
+.reporte-periodo-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  ion-icon {
+    font-size: 18px;
+    margin-right: 6px;
+    color: #1976d2;
+  }
+}
+.reporte-periodo-inputs {
+  display: flex;
+  gap: 10px;
+  ion-input {
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 15px;
+    border: 1px solid #e0e0e0;
+  }
+}
+.tab4-content {
+  padding: 24px;
+  text-align: center;
+}

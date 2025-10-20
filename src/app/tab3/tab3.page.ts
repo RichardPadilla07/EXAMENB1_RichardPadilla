@@ -1,13 +1,30 @@
-import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { Component, OnInit } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  templateUrl: './tab3.page.html',
+  styleUrls: ['./tab3.page.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    IonicModule
+  ]
 })
-export class Tab3Page {
-  constructor() {}
+export class Tab3Page implements OnInit {
+  recibos: { foto: string; descripcion: string; fecha: string; monto: number }[] = [];
+
+  ngOnInit() {
+    const gastos = JSON.parse(localStorage.getItem('gastos') || '[]');
+    this.recibos = gastos
+      .filter((g: any) => g.receiptPhoto)
+      .map((g: any) => ({
+        foto: g.receiptPhoto,
+        descripcion: g.descripcion || '',
+        fecha: g.fecha || '',
+        monto: g.monto || 0
+      }));
+  }
 }

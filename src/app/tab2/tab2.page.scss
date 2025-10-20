@@ -1,0 +1,89 @@
+.gasto-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+  padding: 32px 24px 24px 24px;
+  max-width: 800px;
+  margin: 90px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+ion-item {
+  --background: transparent;
+  --highlight-background: transparent;
+  --min-height: 48px;
+  margin-bottom: 2px;
+}
+
+.participantes {
+  margin: 12px 0 0 0;
+}
+.participantes-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+ion-chip[disabled] {
+  opacity: 0.5;
+  margin-right: 4px;
+}
+
+.foto-label {
+  margin: 16px 0 4px 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.obligatorio {
+  color: #e11d48;
+  font-size: 13px;
+}
+
+.foto-box {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 20px 10px;
+  text-align: center;
+  margin-bottom: 16px;
+  background: #fafbfc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.foto-btn {
+  color: #2563eb;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.foto-text {
+  font-size: 13px;
+  color: #888;
+  margin-left: 4px;
+}
+.foto-preview {
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+}
+
+.guardar-btn {
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+.nota {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}

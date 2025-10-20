@@ -1,17 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <div class="gasto-card">
+    <h2>Nuevo Gasto</h2>
+    <ion-item lines="none">
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-input [(ngModel)]="descripcion" placeholder="Ej: Cena con amigos"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Monto</ion-label>
+      <ion-input type="number" [(ngModel)]="monto" placeholder="$ 0.00"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">¿Quién pagó?</ion-label>
+      <ion-select [(ngModel)]="usuario" placeholder="Seleccionar persona">
+        <ion-select-option value="Juan">Juan</ion-select-option>
+        <ion-select-option value="María">María</ion-select-option>
+        <ion-select-option value="Pedro">Pedro</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class="participantes">
+      <div class="participantes-label">Participantes</div>
+      <ion-chip
+        color="light"
+        [outline]="!selectedParticipantes.includes(p)"
+        [color]="selectedParticipantes.includes(p) ? 'primary' : 'light'"
+        (click)="toggleParticipante(p)"
+        *ngFor="let p of participantes"
+      >
+        {{ p }}
+      </ion-chip>
+    </div>
+    <div class="foto-label">
+      <span>Foto del Recibo</span>
+      <span class="obligatorio">* Obligatorio</span>
+    </div>
+    <div class="foto-box">
+      <ion-button fill="clear" (click)="takePhoto()" class="foto-btn">
+        TOMAR FOTO DEL RECIBO
+      </ion-button>
+      <span class="foto-text">suba el recibo</span>
+      <div *ngIf="receiptPhoto">
+        <img [src]="receiptPhoto" class="foto-preview" />
+      </div>
+    </div>
+    <ion-button expand="block" color="primary" (click)="guardarGasto()" class="guardar-btn">
+      GUARDAR GASTO CON RECIBO
+    </ion-button>
+    <div class="nota">
+      Todos los gastos deben incluir foto del recibo
+    </div>
+  </div>
 </ion-content>

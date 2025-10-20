@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar class="reporte-header">
+    <div>
+      <div class="reporte-title">Reporte Mensual</div>
+      <div class="reporte-sub">Octubre 2025</div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="reporte-box">
+
+    <div class="reporte-totales">
+      <div class="reporte-total">
+        <div class="reporte-total-label">Total Gastos</div>
+        <div class="reporte-total-num">${{ totalGastos.toFixed(2) }}</div>
+      </div>
+      <div class="reporte-promedio">
+        <div class="reporte-total-label">Promedio/día</div>
+        <div class="reporte-total-num">${{ promedioDia.toFixed(2) }}</div>
+      </div>
+    </div>
+
+    <div class="reporte-categorias">
+      <div class="reporte-cat-title">Gastos por Categoría</div>
+      <div class="reporte-cat-row" *ngFor="let cat of categorias">
+        <span>{{ cat.nombre }}</span>
+        <div class="reporte-bar" [ngStyle]="{'background': cat.color, 'width': (cat.monto / maxCategoriaMonto * 100) + '%'}"></div>
+        <span class="reporte-cat-monto">${{ cat.monto }}</span>
+      </div>
+    </div>
+
+    <div class="reporte-periodo">
+      <div class="reporte-periodo-title">
+        <ion-icon name="calendar-outline"></ion-icon>
+        Período del Reporte
+      </div>
+      <div class="reporte-periodo-inputs">
+        <ion-input type="date" [value]="fechaInicio" readonly></ion-input>
+        <ion-input type="date" [value]="fechaFin" readonly></ion-input>
+      </div>
+    </div>
+  </div>
+</ion-content>

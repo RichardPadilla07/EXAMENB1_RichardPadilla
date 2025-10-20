@@ -1,17 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div class="container">
+    <div class="total-card">
+      <div class="total-label">Total gastado</div>
+      <div class="total-amount">
+        ${{ totalGastado || '0.00' }}
+      </div>
+      <div class="total-date">Octubre 2025</div>
+    </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <div class="recent-title">Gastos Recientes</div>
+    <ion-card *ngFor="let gasto of gastos">
+      <ion-card-content class="gasto-content">
+        <div>
+          <div class="gasto-desc">{{ gasto.descripcion }}</div>
+          <div class="gasto-user">Pagado por {{ gasto.usuario }}</div>
+          <div class="gasto-participantes">
+            <span *ngFor="let p of gasto.participantes" class="participante">{{ p }}</span>
+          </div>
+        </div>
+        <div class="gasto-right">
+          <div class="gasto-monto">${{ gasto.monto }}</div>
+          <div class="gasto-fecha">{{ gasto.fecha }}</div>
+          <div class="gasto-verificado">
+            <ion-icon name="checkmark-circle-outline" style="vertical-align:middle;"></ion-icon>
+            Recibo verificado
+          </div>
+          <img *ngIf="gasto.receiptPhoto" [src]="gasto.receiptPhoto" class="gasto-img" />
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
